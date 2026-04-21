@@ -1,7 +1,8 @@
 pipeline {
-  agent any
+  agent none
     stages{ 
       stage ('Build'){
+        agent { label 'rhel-slave'}
         steps {
           echo "this is build stage"
         }
