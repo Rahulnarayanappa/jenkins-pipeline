@@ -8,11 +8,13 @@ pipeline {
         }
       }
        stage ('Deploy'){
+                 agent { label 'rhel-worker' }
         steps {
           echo "this is deploy stage"
         }
       }
        stage ('Test'){
+         agent { label 'master' }
         steps {
           echo "this is test stage"
         }
