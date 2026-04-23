@@ -15,21 +15,25 @@ pipeline {
       }
 
        stage('Test') {
-	agent { label 'master' }
-
-	parallel {
-		stage('Test1') {
-			steps {
-				echo "this is test1"
+			parallel {
+				stage('Test1') {
+					agent { label 'master' }
+						steps {
+						echo "this is test1"
+					}
 			}
-		}
-		stage ('Test2') {
-			steps {
-				echo "this is test2"
+				stage ('Test2') {
+					agent { label 'master' }
+						steps {
+							echo "this is test2"
 			}
 		}
 	}
-           
-       }
-  }
 }
+	}
+}
+
+
+
+
+
