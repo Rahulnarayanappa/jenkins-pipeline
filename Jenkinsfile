@@ -13,7 +13,10 @@ pipeline {
           echo "this is deploy stage"
         }
       }
+
        stage('Test') {
+	agent { label 'master' }
+
 	parallel {
 		stage('Test1') {
 			steps {
@@ -26,10 +29,7 @@ pipeline {
 			}
 		}
 	}
-         agent { label 'master' }
-        steps {
-          echo "this is test stage"
-        }
-      }
+           
+       }
   }
 }
