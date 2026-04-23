@@ -13,9 +13,9 @@ pipeline {
           echo "this is deploy stage"
         }
       }
-       stage ('Test'){
+       stage('Test') {
 	parallel {
-		stage ('Test1') {
+		stage('Test1') {
 			steps {
 				echo "this is test1"
 			}
